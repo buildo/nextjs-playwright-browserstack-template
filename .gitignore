@@ -10,6 +10,8 @@
 /playwright-report/
 /playwright/.cache/
 .obs*
+*report*
+events.json
 
 # next.js
 /.next/
@@ -27,10 +29,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+usage.log*
 
 # local env files
 .env*.local
-.env
+.env*
 
 # typescript
 *.tsbuildinfo

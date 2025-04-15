@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@types/dotenv": "^8.2.3",
+    "browserstack-node-sdk": "^1.34.52",
     "dotenv": "^16.5.0",
     "next": "latest",
+    "playwright": "^1.51.1",
     "react": "latest",
     "react-dom": "latest"
   },
