@@ -13,10 +13,7 @@ const config: PlaywrightTestConfig = {
 
   use: {
     trace: "on-first-retry",
-    extraHTTPHeaders: {
-      "X-Component-Tests": "true", // prevent the app from caching API responses
-    },
-    ignoreHTTPSErrors: true,
+    ignoreHTTPSErrors: false,
     launchOptions: {
       args: [],
     },

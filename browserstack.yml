@@ -32,42 +32,11 @@ buildIdentifier: '${BUILD_NUMBER}' # Supports strings along with either/both ${e
 # !!!! iOS not supported for playwright+browserstack; use playwright config options instead
 platforms:
   # Mobile devices testing
-  - name: 'Samsung Galaxy S23 Ultra'
-    deviceName: Samsung Galaxy S23 Ultra
-    playwrightConfigOptions:
-      name: GalaxyS23
-      launchOptions:
-        disableCorsRestrictions: true
-        disable-features: 'IsolateOrigins'
-  # Platforms for accessibility testing
-  # - name: 'Windows 11 Chrome'
-  #   os: Windows
-  #   osVersion: 11
-  #   browserName: Chrome
-  #   browserVersion: latest
-  #   accessibility: true
-  #   playwrightConfigOptions:
-  #     name: windows
-  # - name: 'MacOS Chrome'
-  #   os: OS X
-  #   osVersion: Sonoma
-  #   browserName: Chrome
-  #   browserVersion: latest
-  #   accessibility: true
-  #   playwrightConfigOptions:
-  #     name: osX
+  - browserName: safari
+    osVersion: 17
+    deviceName: iPhone 15 Pro Max
 
-# =======================
-# Parallels per Platform
-# =======================
-# The number of parallel threads to be used for each platform set.
-# BrowserStack's SDK runner will select the best strategy based on the configured value
-#
-# Example 1 - If you have configured 3 platforms and set `parallelsPerPlatform` as 2, a total of 6 (2 * 3) parallel threads will be used on BrowserStack
-#
-# Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
-
-disableCorsRestrictions: true
+#disableCorsRestrictions: true
 
 testOrchestrationOptions:
   retryTestsOnFailure:
@@ -80,6 +49,7 @@ testOrchestrationOptions:
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
+browserstack.playwrightVersion: '1.50.1' # <string> (Default: latest) Specify the version of Playwright to use
 browserstackLocal: true # <boolean> (Default false)
 browserStackLocalOptions:
   # Options to be passed to BrowserStack local in-case of advanced configurations
@@ -92,8 +62,8 @@ framework: playwright
 # Debugging features
 # ===================
 debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
-networkLogs: true # <boolean> Set to true to enable HAR logs capturing
-consoleLogs: info # <string> Remote browser's console debug levels to be printed (Default: errors)
+#networkLogs: true # <boolean> Set to true to enable HAR logs capturing
+#consoleLogs: info # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 # CUSTOM_TAG_<INT>: # <string> (Default: parent folder name of the test file) Custom tag for your test suite
 
