@@ -63,6 +63,24 @@ npm start
 - Global CSS styles applied throughout the application.
 - Custom document structure for enhanced SEO and performance.
 
+### GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+To deploy the project:
+
+1. Push your changes to the `main` branch
+2. The GitHub Actions workflow will automatically build and deploy your site
+3. Your site will be available at `https://yourusername.github.io/nextjs-playwright-browserstack-template`
+
+To manually build the static export:
+
+```
+npm run export
+```
+
+This will create an `out` directory with the static files ready for deployment.
+
 ### License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

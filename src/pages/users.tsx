@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "../styles/Users.module.css";
+import { GetStaticProps } from "next";
 
 type User = {
   id: number;
@@ -7,32 +8,27 @@ type User = {
   email: string;
 };
 
-export default function UsersPage() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
+interface UsersPageProps {
+  initialUsers: User[];
+}
 
-  useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const response = await fetch("/api/users");
-        if (!response.ok) {
-          throw new Error("Failed to fetch users");
-        }
-        const data = await response.json();
-        setUsers(data);
-        setIsLoading(false);
-      } catch (error) {
-        setError("Failed to load users");
-        setIsLoading(false);
-      }
-    }
+export const getStaticProps: GetStaticProps<UsersPageProps> = async () => {
+  // The data you have in your API route can be directly used here
+  const users = [
+    { id: 1, name: "John Doe", email: "john@example.com" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com" },
+    { id: 3, name: "Bob Johnson", email: "bob@example.com" },
+  ];
 
-    fetchUsers();
-  }, []);
+  return {
+    props: {
+      initialUsers: users,
+    },
+  };
+};
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+export default function UsersPage({ initialUsers }: UsersPageProps) {
+  const [users] = useState<User[]>(initialUsers);
 
   return (
     <div className={styles.container}>
