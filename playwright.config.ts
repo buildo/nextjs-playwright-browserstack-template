@@ -21,10 +21,16 @@ const config: PlaywrightTestConfig = {
 
   projects: [
     {
-      name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"],
-      },
+      name: "Galaxy Tab S9",
+      use: { ...devices["Galaxy Tab S9"] },
+    },
+    {
+      name: "Galaxy S24",
+      use: { ...devices["Galaxy S24"] },
+    },
+    {
+      name: "iPad Mini",
+      use: { ...devices["iPad Mini"] },
     },
   ],
 };
