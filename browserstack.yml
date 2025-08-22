@@ -31,15 +31,66 @@ buildIdentifier: '${BUILD_NUMBER}' # Supports strings along with either/both ${e
 
 # !!!! iOS not supported for playwright+browserstack; use playwright config options instead
 platforms:
-  # Mobile devices testing
+  # Mobile devices testing - Samsung Galaxy Series with Chrome
   - browserName: chrome
-    osVersion: 14
-    deviceName: Samsung Galaxy Tab S9
-  - browserName: chrome
-    osVersion: 14
-    deviceName: Samsung Galaxy S24
+    osVersion: 15
+    deviceName: Samsung Galaxy S25 Ultra
+  # - browserName: chrome
+  #   osVersion: 15
+  #   deviceName: Samsung Galaxy S25
+  # - browserName: chrome
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24 Ultra
+  # - browserName: chrome
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24
 
-#disableCorsRestrictions: true
+  # # Mobile devices testing - Samsung Galaxy Series with Samsung Internet
+  # - browserName: samsung
+  #   osVersion: 15
+  #   deviceName: Samsung Galaxy S25 Ultra
+  # - browserName: samsung
+  #   osVersion: 15
+  #   deviceName: Samsung Galaxy S25
+  # - browserName: samsung
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24 Ultra
+  # - browserName: samsung
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24
+
+  # # Google Pixel Series with Chrome
+  # - browserName: chrome
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9 Pro XL
+  # - browserName: chrome
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9 Pro
+  # - browserName: chrome
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9
+  # - browserName: chrome
+  #   osVersion: 14
+  #   deviceName: Google Pixel 8 Pro
+  # - browserName: chrome
+  #   osVersion: 14
+  #   deviceName: Google Pixel 8
+
+  # # OnePlus Series with Chrome
+  # - browserName: chrome
+  #   osVersion: 15
+  #   deviceName: OnePlus 13R
+  # - browserName: chrome
+  #   osVersion: 14
+  #   deviceName: OnePlus 12R
+
+  # # OnePlus Series with Firefox
+  # - browserName: firefox
+  #   osVersion: 15
+  #   deviceName: OnePlus 13R
+  # - browserName: firefox
+  #   osVersion: 14
+  #   deviceName: OnePlus 12R
 
 testOrchestrationOptions:
   retryTestsOnFailure:

@@ -1,0 +1,164 @@
+.container {
+  height: 100vh;
+  overflow-y: auto;
+  /* Intentionally removing smooth scrolling to create an issue */
+  scroll-behavior: auto;
+  /* Position the container relative to allow absolute positioning within */
+  position: relative;
+  /* Disable viewport adjustments on mobile */
+  -webkit-overflow-scrolling: auto;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  /* Remove bottom padding - we want the last input to be at the bottom */
+  padding-bottom: 10px;
+  /* Push content down to ensure the last field appears at the bottom of viewport */
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form {
+  width: 100%;
+  /* Make the form take up all available space */
+  flex: 1;
+  /* Push last elements to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Style for the last form group to position it at the bottom */
+.formGroup:last-child {
+  /* Push this to the bottom on mobile */
+  margin-top: auto;
+  /* This ensures the last field is positioned exactly where a keyboard would cover it */
+  margin-bottom: 0;
+  padding-bottom: 8vh; /* Approximately where keyboard will start */
+}
+
+.formGroup h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.formField {
+  margin-bottom: 1rem;
+}
+
+.formField label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.formField input[type="text"],
+.formField input[type="email"],
+.formField input[type="tel"],
+.formField input[type="date"],
+.formField select,
+.formField textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  /* Intentionally removing scroll-margin to create the bug */
+  scroll-margin: 0;
+  /* Prevent browser scroll-into-view behavior */
+  scroll-behavior: auto;
+  /* Remove any focus styling that might help users */
+  transition: none;
+}
+
+/* Override default focus behavior */
+.formField input:focus,
+.formField textarea:focus,
+.formField select:focus {
+  /* Remove any focus styles that might help users see where they're typing */
+  outline: none;
+  border-color: #ddd;
+  box-shadow: none;
+  /* This property tries to disable automatic scrolling on focus */
+  scroll-behavior: auto !important;
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 100px;
+  /* Intentionally removing scroll-margin to create the bug */
+  scroll-margin: 0;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.submitButton,
+.resetButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submitButton {
+  background-color: #0070f3;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #0051b3;
+  transform: translateY(-2px);
+}
+
+.resetButton {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.resetButton:hover {
+  background-color: #ddd;
+  transform: translateY(-2px);
+}
