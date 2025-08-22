@@ -1,8 +1,16 @@
 import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import dynamic from "next/dynamic";
 
 export default function Home() {
+  const HydrationButton = dynamic(
+    () => import("../components/HydrationButton"),
+    {
+      ssr: false,
+      loading: () => <p>Loading component...</p>,
+    }
+  );
   return (
     <>
       <Head>
@@ -18,6 +26,7 @@ export default function Home() {
           This is a simple Next.js application displaying a title and
           description.
         </p>
+        <HydrationButton />
       </div>
     </>
   );

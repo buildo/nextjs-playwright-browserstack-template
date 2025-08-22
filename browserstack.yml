@@ -32,9 +32,12 @@ buildIdentifier: '${BUILD_NUMBER}' # Supports strings along with either/both ${e
 # !!!! iOS not supported for playwright+browserstack; use playwright config options instead
 platforms:
   # Mobile devices testing
-  - browserName: safari
-    osVersion: 17
-    deviceName: iPhone 15 Pro Max
+  - browserName: chrome
+    osVersion: 14
+    deviceName: Samsung Galaxy Tab S9
+  - browserName: chrome
+    osVersion: 14
+    deviceName: Samsung Galaxy S24
 
 #disableCorsRestrictions: true
 
@@ -50,11 +53,6 @@ testOrchestrationOptions:
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
 browserstack.playwrightVersion: '1.50.1' # <string> (Default: latest) Specify the version of Playwright to use
-browserstackLocal: true # <boolean> (Default false)
-browserStackLocalOptions:
-  # Options to be passed to BrowserStack local in-case of advanced configurations
-  # localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.
-  forceLocal: true
 # <boolean> (Default: false) Set to true if you need to resolve all your traffic via BrowserStack Local tunnel.
 # Entire list of arguments available here -> https://www.browserstack.com/docs/automate/selenium/manage-incoming-connections
 framework: playwright
