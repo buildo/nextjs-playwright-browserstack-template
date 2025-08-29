@@ -1,24 +1,13 @@
 .container {
-  height: 100vh;
   overflow-y: auto;
-  /* Intentionally removing smooth scrolling to create an issue */
   scroll-behavior: auto;
-  /* Position the container relative to allow absolute positioning within */
   position: relative;
-  /* Disable viewport adjustments on mobile */
-  -webkit-overflow-scrolling: auto;
 }
 
 .main {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 0.5rem;
-  /* Remove bottom padding - we want the last input to be at the bottom */
-  padding-bottom: 10px;
-  /* Push content down to ensure the last field appears at the bottom of viewport */
-  min-height: 95vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .title {
@@ -35,15 +24,10 @@
 
 .form {
   width: 100%;
-  /* Make the form take up all available space */
-  flex: 1;
-  /* Push last elements to the bottom */
-  display: flex;
-  flex-direction: column;
 }
 
 .formGroup {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   padding: 1.5rem;
   border: 1px solid #eaeaea;
   border-radius: 8px;
@@ -52,11 +36,9 @@
 
 /* Style for the last form group to position it at the bottom */
 .formGroup:last-child {
-  /* Push this to the bottom on mobile */
   margin-top: auto;
-  /* This ensures the last field is positioned exactly where a keyboard would cover it */
   margin-bottom: 0;
-  padding-bottom: 8vh; /* Approximately where keyboard will start */
+  /* Remove padding-bottom so the last input is at the very bottom */
 }
 
 .formGroup h2 {
