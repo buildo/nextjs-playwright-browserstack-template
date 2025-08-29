@@ -14,15 +14,15 @@
     "export": "next build"
   },
   "dependencies": {
-    "browserstack-node-sdk": "^1.36.0",
+    "browserstack-node-sdk": "1.40.0",
     "dotenv": "^16.5.0",
     "next": "latest",
-    "playwright": "^1.50.1",
+    "playwright": "1.53.0",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.1",
+    "@playwright/test": "1.53.0",
     "@types/node": "^22.14.1",
     "@types/react": "latest",
     "@types/react-dom": "latest",

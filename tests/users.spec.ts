@@ -1,20 +1,30 @@
-// import { test, expect } from "@playwright/test";
-// test.describe("User Page", () => {
-//   test("users page displays mocked users correctly", async ({ page }) => {
-//     await page.goto(
-//       `https://buildo.github.io/nextjs-playwright-browserstack-template/users/`
-//     );
+import { test, expect } from "@playwright/test";
 
-//     // Check if mocked user data is displayed
-//     await expect(page.getByTestId("user1")).toBeVisible();
+test("users page displays mocked users correctly", async ({
+  page,
+}, testInfo) => {
+  await page.goto(
+    `https://buildo.github.io/nextjs-playwright-browserstack-template/users/`
+  );
 
-//     const hasHorizontalOverflow = await page.$eval("body", (el) => {
-//       return el.scrollWidth > el.clientWidth;
-//     });
+  const viewportWidth = await page.evaluate(() => window.innerWidth);
+  const devicePixelRatio = await page.evaluate(() => window.devicePixelRatio);
+  const userAgent = await page.evaluate(() => navigator.userAgent);
+  console.log("Simulated device:", testInfo.project.name);
 
-//     expect(
-//       hasHorizontalOverflow,
-//       "Viewport horizontal overflow should not exist"
-//     ).toBeFalsy();
-//   });
-// });
+  console.log("Viewport width:", viewportWidth);
+  console.log("Device pixel ratio:", devicePixelRatio);
+  console.log("User agent:", userAgent);
+
+  // check if mocked data is displayed
+  await expect(page.getByTestId("user1")).toBeVisible();
+
+  const hasHorizontalOverflow = await page.$eval("body", (el) => {
+    return el.scrollWidth > el.clientWidth;
+  });
+
+  expect(
+    hasHorizontalOverflow,
+    "Viewport horizontal overflow should not exist"
+  ).toBeFalsy();
+});

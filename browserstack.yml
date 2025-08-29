@@ -33,8 +33,8 @@ buildIdentifier: '${BUILD_NUMBER}' # Supports strings along with either/both ${e
 platforms:
   # Mobile devices testing - Samsung Galaxy Series with Chrome
   - browserName: chrome
-    osVersion: 15
-    deviceName: Samsung Galaxy S25 Ultra
+    osVersion: 14
+    deviceName: Samsung Galaxy S24
   # - browserName: chrome
   #   osVersion: 15
   #   deviceName: Samsung Galaxy S25
@@ -103,16 +103,16 @@ testOrchestrationOptions:
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstack.playwrightVersion: '1.50.1' # <string> (Default: latest) Specify the version of Playwright to use
+browserstack.playwrightVersion: '1.53.0' # <string> (Default: latest) Specify the version of Playwright to use
 # <boolean> (Default: false) Set to true if you need to resolve all your traffic via BrowserStack Local tunnel.
 # Entire list of arguments available here -> https://www.browserstack.com/docs/automate/selenium/manage-incoming-connections
 framework: playwright
 # ===================
 # Debugging features
 # ===================
-debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
+#debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
 #networkLogs: true # <boolean> Set to true to enable HAR logs capturing
-#consoleLogs: info # <string> Remote browser's console debug levels to be printed (Default: errors)
+#consoleLogs: debug # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 # CUSTOM_TAG_<INT>: # <string> (Default: parent folder name of the test file) Custom tag for your test suite
 

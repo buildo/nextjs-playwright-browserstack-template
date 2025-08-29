@@ -9,9 +9,9 @@
 
 @media (max-width: 600px) {
   .container {
-    width: 600px; /* Fixed width that will cause overflow */
+    width: 500px; /* Fixed width that will cause overflow */
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden!;
     background-color: #ffe0e0; /* Visual indicator */
   }
 }
