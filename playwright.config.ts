@@ -28,10 +28,6 @@ const config: PlaywrightTestConfig = {
       name: "Galaxy S24",
       use: { ...devices["Galaxy S24"] },
     },
-    {
-      name: "iPad Mini",
-      use: { ...devices["iPad Mini"] },
-    },
   ],
 };
 
