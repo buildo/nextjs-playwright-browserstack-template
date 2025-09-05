@@ -1,121 +1,57 @@
 envFile: ./.env-browserstack
-
-# =============================
-# Set BrowserStack Credentials
-# =============================
-# Add your BrowserStack userName and accessKey here or set BROWSERSTACK_USERNAME and
-# BROWSERSTACK_ACCESS_KEY as env variables
 userName: ${BROWSERSTACK_USERNAME}
 accessKey: ${BROWSERSTACK_ACCESS_KEY}
 
-# ======================
-# BrowserStack Reporting
-# ======================
-# The following capabilities are used to set up reporting on BrowserStack:
-# Set 'projectName' to the name of your project. Example, Marketing Website
-projectName: buildo-nextjs-browserstack
-# Set `buildName` as the name of the job / testsuite being run
-buildName: buildName
-# `buildIdentifier` is a unique id to differentiate every execution that gets appended to
-# buildName. Choose your buildIdentifier format from the available expressions:
-# ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
-# ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
-# Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
-buildIdentifier: '${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
-
-# =======================================
-# Platforms (Browsers / Devices to test)
-# =======================================
-# Platforms object contains all the browser / device combinations you want to test on.
-# Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
-
-# !!!! iOS not supported for playwright+browserstack; use playwright config options instead
 platforms:
-  # Mobile devices testing - Samsung Galaxy Series with Chrome
-  - browserName: chrome
+  # Mobile devices testing - iPhone series
+  - browserName: Safari
+    osVersion: 18.6
+    deviceName: iPhone 16
+  # Mobile devices testing - Samsung Galaxy Series
+  - deviceName: Samsung Galaxy S24
+    browserName: firefox
+    osVersion: 14
+  - browserName: firefox
+    osVersion: 15
+    deviceName: Samsung Galaxy S25
+  - browserName: firefox
+    osVersion: 14
+    deviceName: Samsung Galaxy S24 Ultra
+  - browserName: firefox
     osVersion: 14
     deviceName: Samsung Galaxy S24
-  # - browserName: chrome
-  #   osVersion: 15
-  #   deviceName: Samsung Galaxy S25
-  # - browserName: chrome
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24 Ultra
-  # - browserName: chrome
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24
 
-  # # Mobile devices testing - Samsung Galaxy Series with Samsung Internet
-  # - browserName: samsung
-  #   osVersion: 15
-  #   deviceName: Samsung Galaxy S25 Ultra
-  # - browserName: samsung
-  #   osVersion: 15
-  #   deviceName: Samsung Galaxy S25
-  # - browserName: samsung
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24 Ultra
-  # - browserName: samsung
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24
+  # Google Pixel Series with Chrome
+  - browserName: firefox
+    osVersion: 15
+    deviceName: Google Pixel 9 Pro XL
+  - browserName: firefox
+    osVersion: 15
+    deviceName: Google Pixel 9 Pro
+  - browserName: firefox
+    osVersion: 15
+    deviceName: Google Pixel 9
+  - browserName: firefox
+    osVersion: 14
+    deviceName: Google Pixel 8 Pro
+  - browserName: firefox
+    osVersion: 14
+    deviceName: Google Pixel 8
 
-  # # Google Pixel Series with Chrome
-  # - browserName: chrome
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9 Pro XL
-  # - browserName: chrome
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9 Pro
-  # - browserName: chrome
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9
-  # - browserName: chrome
-  #   osVersion: 14
-  #   deviceName: Google Pixel 8 Pro
-  # - browserName: chrome
-  #   osVersion: 14
-  #   deviceName: Google Pixel 8
+browserstack:
+  buildName: 'testBuild'
+  projectName: buildo-nextjs-browserstack
+  # debug: true
+  # networkLogs: true
+  # console: 'verbose'
+  local: false
+  source: 'playwright:1.53.0'
+  networkLogsOptions:
+    captureContent: true
+  # consoleOptions:
+  #   level: 'verbose'
 
-  # # OnePlus Series with Chrome
-  # - browserName: chrome
-  #   osVersion: 15
-  #   deviceName: OnePlus 13R
-  # - browserName: chrome
-  #   osVersion: 14
-  #   deviceName: OnePlus 12R
-
-  # # OnePlus Series with Firefox
-  # - browserName: firefox
-  #   osVersion: 15
-  #   deviceName: OnePlus 13R
-  # - browserName: firefox
-  #   osVersion: 14
-  #   deviceName: OnePlus 12R
-
-testOrchestrationOptions:
-  retryTestsOnFailure:
-    enabled: true
-    maxRetries: 1
-
-# ==========================================
-# BrowserStack Local
-# (For localhost, staging/private websites)
-# ==========================================
-# Set browserStackLocal to true if your website under test is not accessible publicly over the internet
-# Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstack.playwrightVersion: '1.53.0' # <string> (Default: latest) Specify the version of Playwright to use
-# <boolean> (Default: false) Set to true if you need to resolve all your traffic via BrowserStack Local tunnel.
-# Entire list of arguments available here -> https://www.browserstack.com/docs/automate/selenium/manage-incoming-connections
-framework: playwright
-# ===================
-# Debugging features
-# ===================
-#debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
-#networkLogs: true # <boolean> Set to true to enable HAR logs capturing
-#consoleLogs: debug # <string> Remote browser's console debug levels to be printed (Default: errors)
-# Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
-# CUSTOM_TAG_<INT>: # <string> (Default: parent folder name of the test file) Custom tag for your test suite
-
-# Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions
-# Visit observability.browserstack.com to see your test reports and insights. To disable test observability, specify `testObservability: false` in the key below.
-testObservability: true
+# Test settings
+testMatch: '**/*.spec.ts'
+retries: 1
+workers: 1
