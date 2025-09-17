@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - ghpage
+  workflow_dispatch:
 
 # Allow deployment to GitHub Pages
 permissions:
