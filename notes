@@ -1,0 +1,24 @@
+BROWSERSTACK
+
+Viewport width: 408
+Device pixel ratio: 3
+User agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36
+notes: Samsung s24, firefox
+
+---
+
+Viewport width: 441
+Device pixel ratio: 3
+User agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1
+notes: iPhone 16, safari
+
+LOCAL
+
+Viewport width: 528
+Device pixel ratio: 2.25
+User agent: Mozilla/5.0 (Linux; Android 14; SM-S921U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.15 Mobile Safari/537.36
+notes: Samsung s24, firefox
+
+---
+
+unknown

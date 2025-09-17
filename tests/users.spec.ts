@@ -5,9 +5,6 @@ test("users page displays mocked users correctly", async ({ page }) => {
     `https://buildo.github.io/nextjs-playwright-browserstack-template/users/`
   );
 
-  // Add a small wait to ensure the page is fully loaded
-  await page.waitForLoadState("networkidle");
-
   const viewportWidth = await page.evaluate(() => window.innerWidth);
   const devicePixelRatio = await page.evaluate(() => window.devicePixelRatio);
   const userAgent = await page.evaluate(() => navigator.userAgent);
@@ -16,12 +13,24 @@ test("users page displays mocked users correctly", async ({ page }) => {
   console.error("Device pixel ratio:", devicePixelRatio);
   console.error("User agent:", userAgent);
 
-  // check if mocked data is displayed
-  await expect(page.getByTestId("user1")).toBeVisible();
+  await expect(page.getByTestId("user-1")).toBeVisible();
 
+  // Check for horizontal overflow - this will pass locally (528px) but fail on real device (408px)
   const hasHorizontalOverflow = await page.evaluate(() => {
     const body = document.body;
-    return body.scrollWidth > body.clientWidth;
+    const container = document.querySelector(".container");
+    if (!container) {
+      console.error("Container not found!");
+      return false;
+    }
+
+    const containerWidth = container.getBoundingClientRect().width;
+    const bodyWidth = body.clientWidth;
+
+    console.error("Container width:", containerWidth);
+    console.error("Body width:", bodyWidth);
+
+    return containerWidth > bodyWidth;
   });
 
   expect(

@@ -37,6 +37,10 @@ const config: PlaywrightTestConfig = {
         ...devices["iPhone 14"],
       },
     },
+    {
+      name: "Pixel 7",
+      use: { ...devices["Pixel 7"] },
+    },
   ],
 };
 

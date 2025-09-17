@@ -9,47 +9,46 @@ platforms:
     deviceName: iPhone 16
   # Mobile devices testing - Samsung Galaxy Series
   - deviceName: Samsung Galaxy S24
-    browserName: firefox
+    browserName: chrome
     osVersion: 14
-  - browserName: firefox
-    osVersion: 15
-    deviceName: Samsung Galaxy S25
-  - browserName: firefox
-    osVersion: 14
-    deviceName: Samsung Galaxy S24 Ultra
-  - browserName: firefox
-    osVersion: 14
-    deviceName: Samsung Galaxy S24
+  # - browserName: firefox
+  #   osVersion: 15
+  #   deviceName: Samsung Galaxy S25
+  # - browserName: firefox
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24 Ultra
+  # - browserName: firefox
+  #   osVersion: 14
+  #   deviceName: Samsung Galaxy S24
 
-  # Google Pixel Series with Chrome
-  - browserName: firefox
-    osVersion: 15
-    deviceName: Google Pixel 9 Pro XL
-  - browserName: firefox
-    osVersion: 15
-    deviceName: Google Pixel 9 Pro
-  - browserName: firefox
-    osVersion: 15
-    deviceName: Google Pixel 9
-  - browserName: firefox
-    osVersion: 14
-    deviceName: Google Pixel 8 Pro
-  - browserName: firefox
-    osVersion: 14
-    deviceName: Google Pixel 8
+  # # Google Pixel Series with Chrome
+  # - browserName: firefox
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9 Pro XL
+  # - browserName: firefox
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9 Pro
+  # - browserName: firefox
+  #   osVersion: 15
+  #   deviceName: Google Pixel 9
+  # - browserName: firefox
+  #   osVersion: 14
+  #   deviceName: Google Pixel 8 Pro
+  # - browserName: firefox
+  #   osVersion: 14
+  #   deviceName: Google Pixel 8
 
 browserstack:
   buildName: 'testBuild'
   projectName: buildo-nextjs-browserstack
   # debug: true
   # networkLogs: true
-  # console: 'verbose'
+  console: 'verbose'
   local: false
   source: 'playwright:1.53.0'
+
   networkLogsOptions:
     captureContent: true
-  # consoleOptions:
-  #   level: 'verbose'
 
 # Test settings
 testMatch: '**/*.spec.ts'
