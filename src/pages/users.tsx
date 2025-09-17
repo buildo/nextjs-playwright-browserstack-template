@@ -8,7 +8,7 @@ export default function UsersPage() {
     { id: 4, name: "Giorgio Puzzini", email: "giorgio@example.com" },
   ];
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="overflow-container">
       <h1>Users</h1>
       <div className={styles.debugInfo}>
         <p>
