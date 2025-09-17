@@ -48,4 +48,5 @@ next-env.d.ts
 # BrowserStack
 browserstack.err
 browserstack.out
+bstack*
 *.log
