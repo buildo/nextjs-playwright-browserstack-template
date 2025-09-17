@@ -27,19 +27,23 @@ const config: PlaywrightTestConfig = {
     {
       name: "Galaxy S24",
       use: {
-        ...devices["Galaxy S24"],
-        browserName: "chromium",
+        viewport: { width: 520, height: 980 },
+        defaultBrowserType: "chromium",
       },
     },
     {
       name: "iPhone14",
       use: {
-        ...devices["iPhone 14"],
+        viewport: { width: 475, height: 767 },
+        defaultBrowserType: "webkit",
       },
     },
     {
       name: "Pixel 7",
-      use: { ...devices["Pixel 7"] },
+      use: {
+        viewport: { width: 512, height: 915 },
+        defaultBrowserType: "chromium",
+      },
     },
   ],
 };

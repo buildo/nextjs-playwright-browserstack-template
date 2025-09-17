@@ -3,40 +3,18 @@ userName: ${BROWSERSTACK_USERNAME}
 accessKey: ${BROWSERSTACK_ACCESS_KEY}
 
 platforms:
-  # Mobile devices testing - iPhone series
+  # Mobile devices testing - iOS series
   - browserName: Safari
     osVersion: 18.6
     deviceName: iPhone 16
-  # Mobile devices testing - Samsung Galaxy Series
+
+  # Mobile devices testing - Android Series
   - deviceName: Samsung Galaxy S24
     browserName: chrome
     osVersion: 14
-  # - browserName: firefox
-  #   osVersion: 15
-  #   deviceName: Samsung Galaxy S25
-  # - browserName: firefox
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24 Ultra
-  # - browserName: firefox
-  #   osVersion: 14
-  #   deviceName: Samsung Galaxy S24
-
-  # # Google Pixel Series with Chrome
-  # - browserName: firefox
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9 Pro XL
-  # - browserName: firefox
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9 Pro
-  # - browserName: firefox
-  #   osVersion: 15
-  #   deviceName: Google Pixel 9
-  # - browserName: firefox
-  #   osVersion: 14
-  #   deviceName: Google Pixel 8 Pro
-  # - browserName: firefox
-  #   osVersion: 14
-  #   deviceName: Google Pixel 8
+  - browserName: firefox
+    osVersion: 14
+    deviceName: Google Pixel 8
 
 browserstack:
   buildName: 'testBuild'

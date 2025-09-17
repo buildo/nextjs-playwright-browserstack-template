@@ -6,18 +6,19 @@
   flex-direction: column;
 }
 
-/* This will create overflow only below 500px (to catch real device at ~408px but not local test at ~528px) */
+/* This will create overflow only below 450px (to catch real device at ~408px but not local test at ~528px) */
 .container {
   padding: 2rem;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background-color: rgba(82, 169, 184, 1);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .container {
-    min-width: 500px;
+    min-width: 450px;
     margin: 0;
     background-color: #ffe0e0;
   }
