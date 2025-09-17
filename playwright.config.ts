@@ -26,7 +26,20 @@ const config: PlaywrightTestConfig = {
     },
     {
       name: "Galaxy S24",
-      use: { ...devices["Galaxy S24"] },
+      use: {
+        ...devices["Galaxy S24"],
+        browserName: "chromium",
+      },
+    },
+    {
+      name: "iPhone14",
+      use: {
+        ...devices["iPhone 14"],
+      },
+    },
+    {
+      name: "Pixel 7",
+      use: { ...devices["Pixel 7"] },
     },
   ],
 };

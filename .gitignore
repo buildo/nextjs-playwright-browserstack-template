@@ -21,6 +21,7 @@ events.json
 /build
 
 # misc
+/.vscode
 .DS_Store
 *.pem
 
@@ -47,4 +48,5 @@ next-env.d.ts
 # BrowserStack
 browserstack.err
 browserstack.out
+bstack*
 *.log
