@@ -29,6 +29,7 @@ const config: PlaywrightTestConfig = {
       use: {
         viewport: { width: 520, height: 980 },
         defaultBrowserType: "chromium",
+        hasTouch: true,
       },
     },
     {
@@ -36,6 +37,7 @@ const config: PlaywrightTestConfig = {
       use: {
         viewport: { width: 475, height: 767 },
         defaultBrowserType: "webkit",
+        hasTouch: true,
       },
     },
     {
@@ -43,6 +45,7 @@ const config: PlaywrightTestConfig = {
       use: {
         viewport: { width: 512, height: 915 },
         defaultBrowserType: "chromium",
+        hasTouch: true,
       },
     },
   ],
