@@ -7,23 +7,8 @@ export default function Form() {
     lastName: "",
     email: "",
     phone: "",
-    address: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "",
     birthDate: "",
-    occupation: "",
-    company: "",
-    jobTitle: "",
-    experience: "",
-    education: "",
-    skills: "",
-    interests: "",
-    newsletter: false,
-    contactMethod: "email",
-    comments: "",
-    lastField: "", // Adding a new field that will appear at the very bottom
+    lastField: "", // Problematic input
   });
 
   const handleChange = (
@@ -31,12 +16,8 @@ export default function Form() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -119,7 +100,7 @@ export default function Form() {
               <label htmlFor="lastName">A problematic input:</label>
               <input
                 type="text"
-                id="problematic_input"
+                data-testid="problematic-input"
                 name="problematic input"
                 value={formData.lastName}
                 onChange={handleChange}
