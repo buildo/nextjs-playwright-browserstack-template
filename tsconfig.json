@@ -23,13 +23,19 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "playwright.config.ts"
+    "next-env.d.ts",
+    "playwright.config.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

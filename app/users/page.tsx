@@ -1,4 +1,4 @@
-import styles from "../styles/Users.module.css";
+import styles from "./Users.module.css";
 
 export default function UsersPage() {
   const users = [
