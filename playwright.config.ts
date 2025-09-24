@@ -26,14 +26,14 @@ const config: PlaywrightTestConfig = {
     },
     {
       name: "Galaxy S24",
-      use: {
-        viewport: { width: 520, height: 980 },
-        defaultBrowserType: "chromium",
-        hasTouch: true,
-      },
+      use: { ...devices['Galaxy S24'] },
     },
     {
-      name: "iPhone14",
+      name: "Nexus 7",
+      use: { ...devices["Nexus 7"] }
+    },
+    {
+      name: "iPhone 15",
       use: {
         viewport: { width: 475, height: 767 },
         defaultBrowserType: "webkit",

@@ -15,8 +15,9 @@ test("users page displays mocked users correctly", async ({ page }) => {
   console.error("Device pixel ratio:", devicePixelRatio)
   console.error("User agent:", userAgent)
 
-  const bgColor = await problematicContainer.evaluate(
-    (el) => getComputedStyle(el).backgroundColor
-  )
+  const bgColor = await page.evaluate(() => {
+    const el = document.querySelector('[data-testid="overflow-container"]');
+    return el ? getComputedStyle(el).backgroundColor : null;
+  });
   expect(bgColor).toBe("rgb(82, 169, 184)")
 })

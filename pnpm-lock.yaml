@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       browserstack-node-sdk:
-        specifier: 1.42.7
-        version: 1.42.7
+        specifier: latest
+        version: 1.42.8
       dotenv:
         specifier: ^16.5.0
         version: 16.6.1
@@ -563,8 +563,8 @@ packages:
   browserstack-local@1.5.8:
     resolution: {integrity: sha512-8p8APDD7bY8E806pZBratRQmd9quqB8o3jiOqxVHWTiYGAW5ePMqFDKbZaedUkFM52Dnfl5Gxviz2bHXiiV3DQ==}
 
-  browserstack-node-sdk@1.42.7:
-    resolution: {integrity: sha512-DmwTMoJi/dI/4mftCKKAavwbyX4pqrcCpZy6snippa3ZxMzqPISxbqSUffWbI3/sl5AOwvBRxCmY3Z6PyNjpvw==}
+  browserstack-node-sdk@1.42.8:
+    resolution: {integrity: sha512-kCQL9dhdJEgIFqxhCfgd8upQEb7xsuNW2T9Ob/oD4fszUy/oDJvF/G2mRIovGbEYALwJ3/kq3p9bK59+NYbN0g==}
     hasBin: true
 
   buffer-crc32@0.2.13:
@@ -2534,7 +2534,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  browserstack-node-sdk@1.42.7:
+  browserstack-node-sdk@1.42.8:
     dependencies:
       '@google-cloud/compute': 4.12.0
       '@google-cloud/container': 5.19.0

@@ -1,86 +1,44 @@
-# My Next.js App
+# nextjs-playwright-browserstack-template
 
-This is a simple Next.js application that displays a webpage with a title and description.
+## Versions
 
-## Getting Started
+- **Next.js**: 15.3.4
+- **Playwright**: 1.53.0
+- **BrowserStack SDK**: 1.42.7
 
-To get started with this project, follow the instructions below.
+## Install & Serve Locally
 
-### Prerequisites
+1. **Install dependencies** (using [pnpm](https://pnpm.io/)):
 
-Make sure you have the following installed:
-
-- Node.js (version 12 or later)
-- npm (Node package manager)
-
-### Installation
-
-1. Clone the repository:
-
-   ```
-   git clone https://github.com/yourusername/my-nextjs-app.git
+   ```sh
+   pnpm install
    ```
 
-2. Navigate to the project directory:
+2. **Start development server**:
 
-   ```
-   cd my-nextjs-app
-   ```
-
-3. Install the dependencies:
-
-   ```
-   npm install
+   ```sh
+   pnpm dev
    ```
 
-### Running the Application
+   App will be available at [http://localhost:3000](http://localhost:3000)
 
-To run the application in development mode, use the following command:
+3. **Build for production**:
+   ```sh
+   pnpm build
+   pnpm start
+   ```
 
-```
-npm run dev
-```
+## GitHub Actions
 
-Open your browser and navigate to `http://localhost:3000` to see the application in action.
+This project uses GitHub Actions for:
 
-### Building for Production
+- **Deploying to GitHub Pages** on every push to `main`:
 
-To build the application for production, run:
+  - Installs dependencies and builds static export (`pnpm export`)
+  - Uploads the output to GitHub Pages
 
-```
-npm run build
-```
+- **Running Playwright tests on BrowserStack**:
+  - Installs Playwright browsers and sets up BrowserStack environment
+  - Runs Playwright tests via BrowserStack SDK (`pnpm test:browserstack`)
 
-Then, you can start the production server with:
-
-```
-npm start
-```
-
-### Features
-
-- A simple layout component for consistent styling across pages.
-- Global CSS styles applied throughout the application.
-- Custom document structure for enhanced SEO and performance.
-
-### GitHub Pages Deployment
-
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
-
-To deploy the project:
-
-1. Push your changes to the `main` branch
-2. The GitHub Actions workflow will automatically build and deploy your site
-3. Your site will be available at `https://yourusername.github.io/nextjs-playwright-browserstack-template`
-
-To manually build the static export:
-
-```
-npm run export
-```
-
-This will create an `out` directory with the static files ready for deployment.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+See `.github/workflows/deploy-and-test.yml` for details.
