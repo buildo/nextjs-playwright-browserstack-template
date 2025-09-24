@@ -1,11 +1,12 @@
+import "./globals.css"
 import { ReactNode } from "react";
-import "./globals.css";
 
-type LayoutProps = {
-  children: ReactNode;
-};
+export const metadata = {
+  title: 'Buildo Template App',
+  description: 'Minimal Next.js example',
+}
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
@@ -19,6 +20,5 @@ export default function Layout({ children }: LayoutProps) {
           </footer>
         </div>
       </body>
-    </html>
-  );
+    </html>)
 }
